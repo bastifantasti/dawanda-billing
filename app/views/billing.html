@@ -1,0 +1,97 @@
+<!--
+buyer_full_name: "Anna Wegner"
+buyer_username: "Anna-Wegner"
+company: ""
+created_at: "2014-06-15 08:49:06"
+currency: "EUR"
+firstname_shipping: "Anna"
+id: "58277191"
+invoice_address: " Anna Wegner | Ottisriederstrasse 2b   | 87490 | Haldenwang | Deutschland"
+lastname_shipping: "Wegner"
+line2: ""
+line3: ""
+new_comment_for_seller_at: ""
+paid_at: "2014-06-18 09:03:28"
+payment_method: "bank"
+price: "22,0"
+shipping: "4,5"
+shipping_address: " Anna Wegner | Amselweg 1   | 87477 | Sulzberg | Deutschland"
+shipping_city: "Sulzberg"
+shipping_country: "Deutschland"
+shipping_street: "Amselweg 1"
+shipping_zip: "87477"
+status: "closed"
+total_price: "26,5"
+
+-->
+<div class="row">
+    <div class="col-lg-4 pull-right"><img src="images/logo.png"></div>
+</div>
+<div class="row">
+    <div class="col-lg-12"><span style="color: #c4153a">A red apple · Nora Lichius · Kuxgasse. 3 · 51147 Köln</span></div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+    <p>{{item.buyer_full_name}}<br>
+    {{item.shipping_street}}<br><br>
+    {{item.shipping_zip}} {{item.shipping_city}}<br>
+    {{item.shipping_country}}</p>
+        </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-8">
+
+        <p><br>Köln, den {{today | date : 'dd.MM.yyyy'}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <p>Rechnungsnummer: <span contenteditable="true">Bitte hier eintragen</span></p>
+
+        <p>Bestellnummer: {{item.id}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Pos.</th>
+            <th>Artikelnummer</th>
+            <th>Datum</th>
+            <th>Artikel / Leistung</th>
+            <th>Anzahl</th>
+            <th>Preis in €</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="2">1</td>
+            <td contenteditable="true">Artikelnummer</td>
+            <td>{{item.created_at | date : 'dd.MM.yyyy'}}</td>
+            <td contenteditable="true">Bunte Lichterkette</td>
+            <td contenteditable="true">1</td>
+            <td contenteditable="true">{{item.price}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">Versand</td>
+            <td contenteditable="true">{{item.shipping}}</td>
+        </tr>
+        <tr>
+            <td colspan="5"><strong>Gesamt:</strong></td>
+            <td contenteditable="true">{{item.total_price}}</td>
+        </tr>
+        </tbody>
+    </table>
+        </div>
+</div>
+<p>Es erfolgt kein Ausweis der Umsatzsteuer aufgrund der Anwendung der Kleinunternehmerregelung gem. § 19 UStG.</p>
+<div>
+<h3>Betrag erhalten.<br>
+    Vielen Dank für deinen Auftrag!
+</h3>
+<p><span style="font-size: small">
+*Die Lichterkette ist TÜV-geprüft! Bitte die Sicherheitshinweise an dem Kabel beachten.
+Bitte nur unter Aufsicht benutzen. Für eventuelle Brandschäden übernehme ich keine Haftung.</span></p>
+</div>
+

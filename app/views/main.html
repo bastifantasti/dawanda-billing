@@ -1,0 +1,58 @@
+<div class="jumbotron">
+  <p class="lead">
+    <img src="images/billing.png" alt="I'm Yeoman" width="128">
+    Always a pleasure scaffolding your billings.<br>
+    <span class="text-muted">1. Dawand CSV Export erstellen</span><br>
+    <span class="text-muted">2. URL aus der Email hier einfpgen</span><br>
+    <span class="text-muted">3. Rechnung als PDF speichern</span><br>
+  </p>
+
+</div>
+<div class="row marketing">
+
+    <div class="input-group" style="margin-top: 13px;">
+        <label class="sr-only" for="csvfile">CSV Import</label>
+        <input type="text" class="form-control input-lg" id="csvfile"
+               placeholder="Bitte URL aus der Dawanda-Mail Einfügen">
+
+      <span class="input-group-btn">
+        <button class="btn btn-success btn-lg" type="button" ng-click="loadCsv()">Los!</button>
+      </span>
+    </div>
+    <p class="text-muted" id="lastURL">letzte Url: {{lasturl}}</p>
+
+</div>
+<div class="row marketing">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Bestellnummer</th>
+            <th>Datum</th>
+            <th>Betrag</th>
+            <th>Status</th>
+            <th>Rechnung</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in billings">
+            <td>[{{$index + 1}}]</td>
+            <td>{{item.buyer_full_name}}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.created_at}}</td>
+            <td>{{item.total_price}} €</td>
+            <td class="{{item.status}}">{{item.status}}</td>
+            <td><button type="button" class="btn btn-default btn-sm" ng-click="generateBilling(item)">Erstellen</button></td>
+        </tr>
+
+        </tbody>
+    </table>
+<!--
+    <ul class="example-animate-container">
+        <li class="animate-repeat" ng-repeat="item in billings">
+            [{{$index + 1}}] {{item.buyer_full_name}} | {{item.price}} | {{item.status}} | {{item.created_at}} [<a ng-click="generateBilling(item)">Rechnung generieren</a>]
+        </li>
+    </ul>-->
+</div>
