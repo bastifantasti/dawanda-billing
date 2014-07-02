@@ -5,7 +5,9 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+      <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -27,17 +29,24 @@
           <li><a ng-href="#/about">Über mich</a></li>
           <li><a ng-href="#/contact">Kontakt</a></li>
         </ul>
-        <h3 class="text-muted">Dawanda Rechnungen</h3>
+          <h3 class="text-muted hotel" style="font-size: 32px;">Dawanda Rechnungen</h3>
+
+          <span class="hotels">Always a pleasure scaffolding your billings. :)</span>
       </div>
 
       <div ng-view=""></div>
 
       <div class="footer hidden-print">
-        <p><span class="glyphicon glyphicon-heart"></span> from <a href="http://about.me/sebastian.felix.schwarz">Sebastian Felix Schwarz</a> <iframe src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=dawanda-billing&type=watch&count=true"
-                                                                                                                                                      allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe> <iframe src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=dawanda-billing&type=fork&count=true"
-                                                                                                                                                                                                                                                       allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe> <iframe src="http://ghbtns.com/github-btn.html?user=bastifantasti&type=follow&count=true"
-                                                                                                                                                                                                                                                                                                                                                       allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></p>
-      </div>
+          <p class="hotel" style="font-size: 21px;">with <span class="glyphicon glyphicon-heart"></span> from <a
+                  href="http://about.me/sebastian.felix.schwarz">Sebastian Felix Schwarz</a></div>
+        <iframe src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=dawanda-billing&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=dawanda-billing&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=bastifantasti&type=follow&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+        </p>
+
     </div>
 
 
@@ -84,7 +93,8 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/csvjson.js"></script>
+    <script src="../bower_components/outdated-browser/outdatedbrowser/outdatedBrowser.js"></script>
+    <script src="scripts/csvjson.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
@@ -97,5 +107,19 @@
             src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
             alt="Fork me on GitHub"
             data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <div id="outdated">
+        <h6>Your browser is out-of-date!</h6>
+
+        <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update
+            my browser now</a></p>
+
+        <p id="btnClose"><a href="#">Close</a></p>
+    </div>
+    <script>outdatedBrowser({
+        bgColor: '#3f3f3f',
+        color: '#e3e3e3',
+        lowerThan: 'IE10'
+    });</script>
   </body>
 </html>

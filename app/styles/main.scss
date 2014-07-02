@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+@import "outdatedBrowser.min";
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -14,6 +16,16 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.lead {
+}
+
+.hotel {
+
+  font-family: 'Grand Hotel', cursive;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -33,7 +45,6 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 40px;
-    padding-bottom: 19px;
   }
 }
 
@@ -51,7 +62,7 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   border-bottom: 1px solid #e5e5e5;
-  padding: 25px;
+  padding: 10px;
   margin: 0;
 
   .btn {
@@ -90,5 +101,16 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container .jumbotron {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }

@@ -8,6 +8,11 @@
  *
  * Main module of the application.
  */
+
+
+    //plugin function, place inside DOM ready function
+
+
 angular
   .module('dawandaBillingApp', [
     'ngAnimate',
