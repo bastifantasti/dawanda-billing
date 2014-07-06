@@ -1,0 +1,38 @@
+<h4>Deine Bestellungen</h4>
+
+<div class="row">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Bestellnummer</th>
+            <th>Datum</th>
+            <th>Betrag</th>
+            <th>Status</th>
+            <th>Rechnung</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in orders" class="{{item.status}}">
+            <td class="{{item.status}}">[{{$index + 1}}]</td>
+            <td class="{{item.status}}">{{item.buyer.username}} ({{item.buyer.firstname}} {{item.buyer.lastname}})</td>
+            <td class="{{item.status}}">{{item.id}}</td>
+            <td class="{{item.status}}">{{item.newdate | date:'dd/MM/yyyy @ HH:mm'}}</td>
+            <td class="{{item.status}}"><b>{{item.gesamtbetrag}} €</b></td>
+            <td class="{{item.status}}"><b>{{item.status}}</b></td>
+            <td class="{{item.status}}">
+                <button type="button" class="btn btn-default btn-sm" ng-click="generateBilling(item)">Erstellen</button>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <!--
+        <ul class="example-animate-container">
+            <li class="animate-repeat" ng-repeat="item in billings">
+                [{{$index + 1}}] {{item.buyer_full_name}} | {{item.price}} | {{item.status}} | {{item.created_at}} [<a ng-click="generateBilling(item)">Rechnung generieren</a>]
+            </li>
+        </ul>-->
+</div>
