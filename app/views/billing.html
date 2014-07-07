@@ -28,17 +28,18 @@ total_price: "26,5"
     <div class="col-lg-4 pull-right"><img src="images/logo.png"></div>
 </div>
 <div class="row">
-    <div class="col-lg-12"><span style="color: #c4153a">A red apple · Nora Lichius · Kuxgasse. 3 · 51147 Köln</span><br>
+    <div class="col-lg-12"><span style="color: #c4153a" contenteditable="true">{{item.seller.username}} · {{item.seller.firstname}} {{item.seller.lastname}} · Kuxgasse. 3 · 51147 Köln</span><br>
     </div>
     <br>
 </div>
 <div class="row">
     <div class="col-lg-12">
-    <p>{{item.buyer_full_name}}<br>
-    {{item.shipping_street}}<br><br>
-    {{item.shipping_zip}} {{item.shipping_city}}<br>
-    {{item.shipping_country}}</p>
-        </div>
+        <p>{{item.invoice_address.firstname}} {{item.invoice_address.lastname}}<br>
+            <span ng-show="item.invoice_address.company">{{item.invoice_address.company}}<br></span>
+            {{item.invoice_address.street}} <br><br>
+            {{item.invoice_address.zip}} {{item.invoice_address.city}}<br>
+            {{item.invoice_address.country}}</p>
+    </div>
 </div>
 <div class="row">
     <div class="col-lg-4 col-lg-offset-8">
@@ -67,21 +68,22 @@ total_price: "26,5"
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td rowspan="2">1</td>
-            <td contenteditable="true">Artikelnummer</td>
+        <tr ng-repeat="product in item.order_items">
+            <td rowspan="1">[{{$index + 1}}]</td>
+            <td contenteditable="true">{{product.product.id}}</td>
             <td>{{item.created_at | date : 'dd.MM.yyyy'}}</td>
-            <td contenteditable="true">Bunte Lichterkette</td>
-            <td contenteditable="true">1</td>
-            <td contenteditable="true">{{item.price}}</td>
+            <td contenteditable="true">{{product.product.name}}</td>
+            <td contenteditable="true">{{product.quantity}}</td>
+            <td contenteditable="true">{{ product.cents/100 | number : 2}}</td>
         </tr>
         <tr>
+            <td></td>
             <td colspan="4">Versand</td>
-            <td contenteditable="true">{{item.shipping}}</td>
+            <td contenteditable="true">{{item.versandkosten}}</td>
         </tr>
         <tr>
             <td colspan="5"><strong>Gesamt:</strong></td>
-            <td contenteditable="true">{{item.total_price}}</td>
+            <td contenteditable="true">{{item.gesamtbetrag}}</td>
         </tr>
         </tbody>
     </table>
@@ -92,7 +94,8 @@ total_price: "26,5"
 <h3>Betrag erhalten.<br>
     Vielen Dank für deinen Auftrag!
 </h3>
-<p><span style="font-size: small">
+
+    <p><span style="font-size: small" contenteditable="true">
 *Die Lichterkette ist TÜV-geprüft! Bitte die Sicherheitshinweise an dem Kabel beachten.
 Bitte nur unter Aufsicht benutzen. Für eventuelle Brandschäden übernehme ich keine Haftung.</span></p>
 </div>

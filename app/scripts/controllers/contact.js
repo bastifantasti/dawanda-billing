@@ -8,13 +8,9 @@
  * Controller of the dawandaBillingApp
  */
 angular.module('dawandaBillingApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-        $("#headernav>li.active").removeClass("active");
-        $("#about").addClass("active");
+    .controller('ContactCtrl', function ($scope) {
 
-  });
+        $("#headernav>li.active").removeClass("active");
+        $("#contact").addClass("active");
+
+    });

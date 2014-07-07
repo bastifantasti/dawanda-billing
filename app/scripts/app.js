@@ -34,7 +34,7 @@ angular
             })
             .when('/contact', {
                 templateUrl: 'views/contact.html',
-                controller: 'AboutCtrl'
+                controller: 'ContactCtrl'
             })
             .when('/billing', {
                 templateUrl: 'views/billing.html',

@@ -1,5 +1,27 @@
 <h4>Deine Bestellungen</h4>
+<div ng-hide="orders">
+    <span>Daten bei Dawanda abrufen...</span>
 
+    <div id="ballsWaveG">
+        <div id="ballsWaveG_1" class="ballsWaveG">
+        </div>
+        <div id="ballsWaveG_2" class="ballsWaveG">
+        </div>
+        <div id="ballsWaveG_3" class="ballsWaveG">
+        </div>
+        <div id="ballsWaveG_4" class="ballsWaveG">
+        </div>
+        <div id="ballsWaveG_5" class="ballsWaveG">
+        </div>
+        <div id="ballsWaveG_6" class="ballsWaveG">
+        </div>
+        <div id="ballsWaveG_7" class="ballsWaveG">
+        </div>
+        <div id="ballsWaveG_8" class="ballsWaveG">
+        </div>
+    </div>
+
+</div>
 <div class="row">
 
     <table class="table table-striped">
@@ -9,7 +31,7 @@
             <th>Name</th>
             <th>Bestellnummer</th>
             <th>Datum</th>
-            <th>Betrag</th>
+            <th>Betrag&nbsp;&nbsp;</th>
             <th>Status</th>
             <th>Rechnung</th>
         </tr>
@@ -17,7 +39,8 @@
         <tbody>
         <tr ng-repeat="item in orders" class="{{item.status}}">
             <td class="{{item.status}}">[{{$index + 1}}]</td>
-            <td class="{{item.status}}">{{item.buyer.username}} ({{item.buyer.firstname}} {{item.buyer.lastname}})</td>
+            <td class="{{item.status}}">{{item.buyer.username}}<br>({{item.buyer.firstname}} {{item.buyer.lastname}})
+            </td>
             <td class="{{item.status}}">{{item.id}}</td>
             <td class="{{item.status}}">{{item.newdate | date:'dd/MM/yyyy @ HH:mm'}}</td>
             <td class="{{item.status}}"><b>{{item.gesamtbetrag}} €</b></td>

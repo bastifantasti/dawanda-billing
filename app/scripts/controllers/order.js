@@ -8,12 +8,21 @@
  * Controller of the dawandaBillingApp
  */
 angular.module('dawandaBillingApp')
-    .controller('OrderCtrl', function ($scope, $http) {
+    .controller('OrderCtrl', function ($scope, $http, Billingservice, $location) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
+        $scope.generateBilling = function (item) {
+            Billingservice.setCurrItem(item);
+            console.log("item stored: ");
+            console.log(Billingservice.getCurrItem());
+            $location.path('/billing');
+            // $window.location.href= "/#/billing";
+
+        };
+
         $scope.orders = null;
         $http.get('getOrder.php')
             .success(function (data) {

@@ -3,7 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
-@import "outdatedBrowser.min";
+@import "preloader";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -80,7 +80,6 @@ body {
   }
 }
 
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -126,3 +125,4 @@ body {
 .confirmed {
   background-color: rgb(223, 240, 216) !important;
 }
+
